@@ -1,0 +1,43 @@
+@import url("../../index.css");
+
+.container {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.5em 0.5em;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+}
+
+.where__btn {
+  font-weight: 600;
+  font-size: 0.8em;
+  width: 100%;
+}
+
+.theme__btn {
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+}
+
+.theme__btn img {
+  margin-right: 1em;
+  width: 20px;
+}
+
+.light {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.dark {
+  background-color: var(--color-dark-off);
+  color: var(--color-light-off);
+}
