@@ -1,0 +1,7 @@
+.select {
+  padding: 1.5em 3em 1.5em 1.5em;
+  border: none;
+  margin-top: 2em;
+  border-radius: 5px;
+  border-right: 2em solid transparent;
+}

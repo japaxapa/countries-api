@@ -1,0 +1,28 @@
+@import url("../../index.css");
+
+.loader__dark {
+  border: 10px solid var(--color-dark-off);
+  border-top: 10px solid var(--color-light-off);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1.5s linear infinite;
+}
+
+.loader__light {
+  border: 10px solid var(--color-light);
+  border-top: 10px solid var(--color-dark-off);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

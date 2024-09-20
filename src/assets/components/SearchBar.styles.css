@@ -1,0 +1,17 @@
+.search__container {
+  padding: 0.5em 2em;
+  display: flex;
+  flex-direction: row;
+
+  border-radius: 5px;
+}
+
+.textbox {
+  /* Styling of the textbox */
+  border: none;
+  height: 2rem;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 0 0 2em;
+  width: 100%;
+}

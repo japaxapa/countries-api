@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useThemeContext } from "../context/theme.contex.tsx";
 import "./NavigationBar.styles.css";
 
@@ -6,12 +6,8 @@ export function NavigationBar() {
   const { theme, toggleTheme } = useThemeContext();
   const url = `/icons/${theme == "light" ? "moon" : "sun"}.svg`;
 
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
-
   return (
-    <div className={`container ${theme}`}>
+    <div className={`nav__container ${theme}`}>
       <div>
         <button className={`where__btn ${theme}`}>Where in the world?</button>
       </div>

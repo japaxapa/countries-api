@@ -9,15 +9,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --color-light: hsl(0, 0, 100%);
-  --color-light-off: #cccccc;
+  --color-light: #fff;
+  --color-light-off: #eee;
 
-  --color-dark: hsl(228, 25%, 16%);
-  --color-dark-off: hsl(228, 25%, 23%);
+  --color-dark: #1f2333;
+  --color-dark-off: #2c3249;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
 }
 
 a {
@@ -27,4 +28,28 @@ a {
 }
 a:hover {
   color: #535bf2;
+}
+
+.light {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  transition: 200ms ease-in-out;
+}
+
+.light-off {
+  background-color: var(--color-light-off);
+  color: var(--color-dark);
+  transition: 200ms ease-in-out;
+}
+
+.dark {
+  background-color: var(--color-dark-off);
+  color: var(--color-light-off);
+  transition: 200ms ease-in-out;
+}
+
+.dark-off {
+  background-color: var(--color-dark);
+  color: var(--color-light-off);
+  transition: 200ms ease-in-out;
 }
