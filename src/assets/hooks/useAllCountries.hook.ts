@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Countries } from "../types/countries.types";
 
 export function useAllCountries() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<Countries>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,7 +17,7 @@ export function useAllCountries() {
       } finally {
         setTimeout(() => {
           [setLoading(false)];
-        }, 3000);
+        }, 1000);
       }
     };
 

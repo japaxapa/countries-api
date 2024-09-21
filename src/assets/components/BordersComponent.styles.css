@@ -1,0 +1,13 @@
+.container h1 {
+  font-size: 1.3em;
+}
+
+.borders__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 10px; /* Add some space between buttons */
+}
+
+.borders__container span {
+  display: block;
+}

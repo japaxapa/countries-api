@@ -1,28 +1,23 @@
 import React from "react";
 import { Card } from "./Card";
-import { useAllCountries } from "../hooks/useCountries.hook";
 import "./Cards.styles.css";
 import { Spinner } from "./Spinner";
 import { useGetRandomElements } from "../hooks/useGetRandomElements.hook";
-
+import { FilterType, useCountriesContext } from "../context/countries.context";
 export function Cards() {
-  const { data, loading, error } = useAllCountries();
+  const { countries, isLoading, filter } = useCountriesContext();
 
-  const countries = useGetRandomElements(data, 10);
+  const randomCountries =
+    filter === FilterType.NONE
+      ? useGetRandomElements(countries, 10)
+      : countries;
 
   return (
     <div className="cards__container">
-      {loading && <Spinner />}
-      {!loading &&
-        countries?.map((country, index) => (
-          <Card
-            key={index}
-            url={country.flags.png}
-            name={country.name.common}
-            population={country.population}
-            region={country.region}
-            capital={country.capital[0]}
-          />
+      {isLoading && <Spinner />}
+      {!isLoading &&
+        randomCountries?.map((country, index) => (
+          <Card key={index} country={country} />
         ))}
     </div>
   );

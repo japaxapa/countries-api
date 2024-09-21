@@ -1,26 +1,31 @@
 import React from "react";
 import { useThemeContext } from "../context/theme.contex";
 import "./Card.styles.css";
+import { useCountriesContext } from "../context/countries.context";
+import { Country } from "../types/countries.types";
 
 interface CardProps {
-  url: string;
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
+  country: Country;
 }
 
-export function Card({ url, name, population, region, capital }: CardProps) {
+export function Card({ country }: CardProps) {
   const { theme } = useThemeContext();
 
+  const { changeOpen, changeSelected } = useCountriesContext();
+
+  const handleClick = () => {
+    changeSelected(country);
+    changeOpen();
+  };
+
   return (
-    <div className={`card__container ${theme}`}>
-      <img src={url} alt={`${name} flag`} />
+    <div onClick={handleClick} className={`card__container ${theme}`}>
+      <img src={country.flags.png} alt={`${country.name.common} flag`} />
       <div className="card__container--info">
-        <h1>{name}</h1>
-        <p>Population: {population.toLocaleString("en-GB")}</p>
-        <p>Region: {region}</p>
-        <p>Capital: {capital}</p>
+        <h1>{country.name.common}</h1>
+        <p>Population: {country.population.toLocaleString("en-GB")}</p>
+        <p>Region: {country.region}</p>
+        <p>Capital: {country.capital ? country.capital[0] : "undefined"}</p>
       </div>
     </div>
   );
