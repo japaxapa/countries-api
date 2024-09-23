@@ -3,3 +3,15 @@
   padding: 1em;
   box-sizing: border-box;
 }
+
+@media (min-width: 1280px) {
+  .home__container {
+    padding: 3em;
+  }
+
+  .home__filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

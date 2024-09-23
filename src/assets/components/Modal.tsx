@@ -27,69 +27,78 @@ export function Modal() {
       )}
       {!loading && (
         <div className={`modal__container`}>
-          <DefaultBtn onBack={handleClick}></DefaultBtn>
-          <img src={selected?.flags.png} alt={`${selected?.name} flag`} />
+          <DefaultBtn onBack={handleClick} />
+          <div className="modal__complete">
+            <img src={selected?.flags.png} alt={`${selected?.name} flag`} />
 
-          <h1>{selected?.name.common}</h1>
+            <div className="modal__main">
+              <h1>{selected?.name.common}</h1>
 
-          <div className="modal__info">
-            <p>
-              <strong>Native Name: </strong>
-              {selected?.altSpellings[1]}
-            </p>
-            <p>
-              <strong>Population: </strong>
-              {selected?.population.toLocaleString("en-GB")}
-            </p>
-            <p>
-              <strong>Region: </strong>
-              {selected?.region}
-            </p>
-            <p>
-              <strong>Sub Region: </strong>
-              {selected?.subregion}
-            </p>
-            <p>
-              <strong>Capital: </strong>
-              {selected?.capital ? selected.capital[0] : "undefined"}
-            </p>
+              <div className="modal__main--text">
+                <div className="modal__info">
+                  <p>
+                    <strong>Native Name: </strong>
+                    {selected?.altSpellings[1]}
+                  </p>
+                  <p>
+                    <strong>Population: </strong>
+                    {selected?.population.toLocaleString("en-GB")}
+                  </p>
+                  <p>
+                    <strong>Region: </strong>
+                    {selected?.region}
+                  </p>
+                  <p>
+                    <strong>Sub Region: </strong>
+                    {selected?.subregion}
+                  </p>
+                  <p>
+                    <strong>Capital: </strong>
+                    {selected?.capital ? selected.capital[0] : "undefined"}
+                  </p>
+                </div>
+
+                <div className="modal__sub-info">
+                  <p>
+                    <strong>Top level Domain: </strong>
+                    {selected?.tld
+                      ? Object.entries(selected?.tld).map(
+                          ([key, value], index) => {
+                            const text = index === 0 ? value : `, ${value}`;
+                            return <span key={index}>{text}</span>;
+                          }
+                        )
+                      : "undefined"}
+                  </p>
+                  <p>
+                    <strong>Currencies: </strong>
+                    {selected?.currencies
+                      ? Object.entries(selected?.currencies).map(
+                          ([key, value], index) => {
+                            const text =
+                              index === 0 ? value.name : `, ${value.name}`;
+                            return <span key={index}>{text}</span>;
+                          }
+                        )
+                      : "undefined"}
+                  </p>
+                  <p>
+                    <strong>Languages: </strong>
+                    {selected?.languages
+                      ? Object.entries(selected?.languages).map(
+                          ([key, value], index) => {
+                            const text = index === 0 ? value : `, ${value}`;
+                            return <span key={index}>{text}</span>;
+                          }
+                        )
+                      : "none"}
+                  </p>
+                </div>
+              </div>
+
+              {selected?.borders && <BordersComponent borders={borders} />}
+            </div>
           </div>
-
-          <div className="modal__sub-info">
-            <p>
-              <strong>Top level Domain: </strong>
-              {selected?.tld
-                ? Object.entries(selected?.tld).map(([key, value], index) => {
-                    const text = index === 0 ? value : `, ${value}`;
-                    return <span key={index}>{text}</span>;
-                  })
-                : "undefined"}
-            </p>
-            <p>
-              <strong>Currencies: </strong>
-              {selected?.currencies
-                ? Object.entries(selected?.currencies).map(
-                    ([key, value], index) => {
-                      const text = index === 0 ? value.name : `, ${value.name}`;
-                      return <span key={index}>{text}</span>;
-                    }
-                  )
-                : "undefined"}
-            </p>
-            <p>
-              <strong>Languages: </strong>
-              {selected?.languages
-                ? Object.entries(selected?.languages).map(
-                    ([key, value], index) => {
-                      const text = index === 0 ? value : `, ${value}`;
-                      return <span key={index}>{text}</span>;
-                    }
-                  )
-                : "none"}
-            </p>
-          </div>
-
-          {selected?.borders && <BordersComponent borders={borders} />}
         </div>
       )}
     </>

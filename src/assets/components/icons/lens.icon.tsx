@@ -16,7 +16,7 @@ const LensComponent = () => {
       strokeWidth="1.5"
       stroke={strokeColor}
       className="size-6"
-      style={{ width: "20px" }}
+      style={{ width: "20px", height: "20px" }}
     >
       <path
         strokeLinecap="round"

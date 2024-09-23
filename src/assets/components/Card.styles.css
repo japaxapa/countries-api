@@ -24,10 +24,26 @@
   margin-bottom: 0.6em;
   font-size: 1em;
   font-weight: 500;
+
+  white-space: nowrap; /* Prevents the text from wrapping to the next line */
+  overflow: hidden; /* Hides the overflowing text */
+  text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text */
 }
 
 .card__container--info p {
   margin: 0;
   font-size: 0.8em;
   line-height: 1.7;
+}
+
+@media (min-width: 1280px) {
+  .card__container {
+    width: 100%;
+    max-width: 230px;
+    margin: 0;
+  }
+
+  .card__container img {
+    height: 150px;
+  }
 }

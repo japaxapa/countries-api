@@ -16,8 +16,10 @@ export function Home() {
     <main id="home__container" className={`home__container`}>
       {!isOpen && (
         <>
-          <SearchBar />
-          <DropList />
+          <div className="home__filters">
+            <SearchBar />
+            <DropList />
+          </div>
           <Cards />
         </>
       )}

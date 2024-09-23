@@ -5,3 +5,9 @@
   border-radius: 5px;
   border-right: 2em solid transparent;
 }
+
+@media (min-width: 1280px) {
+  .select {
+    margin: 0;
+  }
+}

@@ -5,3 +5,15 @@
 
   align-items: center;
 }
+
+@media (min-width: 1280px) {
+  .cards__container {
+    padding: 3em 0;
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 4em;
+    justify-items: center;
+  }
+}

@@ -4,6 +4,7 @@
   flex-direction: row;
 
   border-radius: 5px;
+  align-items: center;
 }
 
 .textbox {
@@ -14,4 +15,16 @@
   box-sizing: border-box;
   padding: 0 0 0 2em;
   width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .search__container {
+    padding: 0.6rem 3rem 0.6rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+
+    border-radius: 5px;
+    width: 30%;
+    height: fit-content;
+  }
 }

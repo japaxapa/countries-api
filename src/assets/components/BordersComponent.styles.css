@@ -11,3 +11,24 @@
 .borders__container span {
   display: block;
 }
+
+@media (min-width: 1280px) {
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .container h1 {
+    font-size: 1em;
+    min-width: fit-content;
+  }
+
+  .borders__container {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    align-items: center;
+    gap: 1em;
+
+    padding-left: 1em;
+    width: 100%;
+  }
+}
