@@ -10,6 +10,9 @@ const useWindowDimensions = () => {
         setNum(10);
       }
     };
+
+    handleResize();
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
